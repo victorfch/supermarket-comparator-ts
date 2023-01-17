@@ -7,6 +7,10 @@
   min-height: 100vh;
 }
 
+.container {
+  padding: 0 2rem;
+}
+
 .description {
   display: inherit;
   justify-content: inherit;

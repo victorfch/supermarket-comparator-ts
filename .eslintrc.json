@@ -1,3 +1,68 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "eslint:recommended",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "parserOptions": {"ecmaVersion": 8},
+  "ignorePatterns": [
+    "node_modules/*",
+    ".next/*",
+    ".out/*",
+    "!.prettierrc.js"
+  ],
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "settings": { "react": { "version": "detect" } },
+      "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+      },
+      "plugins": ["@typescript-eslint", "react", "react-hooks", "jsx-a11y"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended"
+      ],
+      "rules": {
+        "no-unused-vars": 0,
+        "no-irregular-whitespace": 1,
+        "react/prop-types": 0,
+        "prefer-arrow-callback": 2,
+        "react/react-in-jsx-scope": 0,
+        "react/no-unescaped-entities": 1,
+        "react/display-name": 0,
+        "react/no-unknown-property": [
+          1,
+          {
+            "ignore": ["jsx"]
+          }
+        ],
+        "jsx-a11y/no-autofocus": 0,
+        "jsx-a11y/anchor-is-valid": 0,
+        "jsx-a11y/click-events-have-key-events": 1,
+        "jsx-a11y/no-static-element-interactions": 1,
+        "jsx-a11y/alt-text": 1,
+        "jsx-a11y/no-noninteractive-element-interactions": 1,
+        "jsx-a11y/no-onchange": 0,
+        "@typescript-eslint/no-unused-vars": 1,
+        "@typescript-eslint/explicit-function-return-type": [
+          1,
+          {
+            "allowExpressions": true,
+            "allowConciseArrowFunctionExpressionsStartingWithVoid": true
+          }
+        ],
+        "@typescript-eslint/ban-ts-comment": 1,
+        "@typescript-eslint/no-var-requires": 0,
+        "@typescript-eslint/no-explicit-any": 0
+      }
+    }
+  ]
 }
